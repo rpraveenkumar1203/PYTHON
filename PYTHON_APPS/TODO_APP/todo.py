@@ -5,6 +5,7 @@ user_input = "Enter the todo ! "
 
 todos = []
 
+#implementing the while loop 
 while True:
     todo = input(user_input)
     todos.append(todo)
