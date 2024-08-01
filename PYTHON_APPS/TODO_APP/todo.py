@@ -1,17 +1,11 @@
+# prompt message variable 
+user_input = "Enter the todo ! "
 
-# assiging a variable to user prompt
-user_prompt = 'Enter a todo !'
+#declaring the list to store all the todos 
 
-# storing the user input
-todo1 = input(user_prompt)
-todo2 = input(user_prompt)
-todo3 = input(user_prompt)
+todos = []
 
-# storing the all the user input in single list
-todo_s_List = [todo1,todo2,todo3]
-
-
-# printing the outut and it type 
-print(todo_s_List)
-print(type(todo_s_List))
-
+while True:
+    todo = input(user_input)
+    todos.append(todo)
+    print(todos)
