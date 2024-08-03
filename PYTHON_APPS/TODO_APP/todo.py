@@ -1,7 +1,7 @@
 todos =[]
 
 while True:
-    user_input=input("Do you need a ADD show edit or exit : \n")
+    user_input=input("Do you need a ADD show edit done or exit : \n")
     user_input= user_input.strip()
 
     match user_input:
