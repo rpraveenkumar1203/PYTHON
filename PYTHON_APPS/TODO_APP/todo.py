@@ -1,23 +1,24 @@
 todos =[]
 
-# intiating the loop 
-
 while True:
-    user_action = input("Enter add or show or exit")
-    user_action = user_action.strip()
+    user_input=input("Do you need a ADD show edit or exit : \n")
 
-    match user_action:
+    match user_input:
         case 'add':
-            todo = input("Enter a todo action : ")
-            todo = todo.title()
+            todo = input('Enter a Todo : \n')
             todos.append(todo)
-        case 'show' | 'display':
-            for items in todos:
-                print(items)
+        case 'show':
+            for todo in todos:
+                print( todos.index(todo) +1 ,'.',todo)
+        case 'edit':
+            number = int(input("Enter a number of which todo to be edited "))
+            number = number -1
+            todo = input('enter a new todo : \n')
+            todos[number] = todo
         case 'exit':
-            break                
-        case _ :
-            print('Enter show or add or display or exit the program')
-print('Bye')
+            break
+        case _:
+            print('you have entered a invalid parameter ,Please enter add remove edit or exit ')
 
+print("bye")
 
