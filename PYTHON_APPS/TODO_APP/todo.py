@@ -56,10 +56,8 @@ while True:
             todos.pop(index)
 
             with open('todos.txt','w') as file:
-                file.writelines(todos)
-            
-            
-                
+                file.writelines(todos)         
+                            
 
         case 'exit':
 
