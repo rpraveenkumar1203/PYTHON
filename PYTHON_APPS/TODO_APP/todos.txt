@@ -1,3 +1,4 @@
 eat
 code
+play
 sleep
