@@ -1,4 +1,8 @@
-eat
+wakeup
+Bath
+Eat
+Code
+Trade
 code
-play
-sleep
+Trade
+eat

@@ -2,7 +2,7 @@ while True:
     user_input = input("Do you need to add , show , edit , complete ,or exit the todo app : ")
     user_input = user_input.strip()
 
-    if 'add' in user_input:
+    if user_input.startswith('add'):
 
         todo = user_input[4:] 
 
@@ -14,7 +14,7 @@ while True:
         with open('todos.txt','w') as file:
             file.writelines(todos)
     
-    elif 'show' in user_input:
+    elif user_input.startswith('show'):
 
         with open('todos.txt','r') as file:
             todos = file.readlines()
@@ -23,35 +23,48 @@ while True:
             todos = f"{index +1}-{todo}"
             print(todos)
             
-    elif 'edit' in user_input:
-
-        item_num = int(input("Enter number of which Todo should be Edited :"))
-        item_num = item_num -1
-
-        updated_todo = input('Enter the new todo : ')
-
-        with open('todos.txt','r') as file:
-            todos = file.readlines()
+    elif user_input.startswith('edit'):
         
-        todos[item_num] = updated_todo + '\n'
+        try:
 
-        with open('todos.txt','w') as file:
-            file.writelines(todos)
+            item_num = int(input("Enter number of which Todo should be Edited :"))
+            item_num = item_num -1
 
-    elif 'complete' in user_input:
+            updated_todo = input('Enter the new todo : ')
 
-        user_input = int(input("Enter a number of the todo , which to be marked as complete :"))
-        user_input = user_input - 1 
+            with open('todos.txt','r') as file:
+                todos = file.readlines()
+            
+            todos[item_num] = updated_todo + '\n'
 
-        with open('todos.txt','r') as file :
-            todos = file.readlines()
+            with open('todos.txt','w') as file:
+                file.writelines(todos)
 
-        todos.pop(user_input)
+        except ValueError:
+            print('your command is not valid ')
+            continue
 
-        with open('todos.txt','w') as file:
-            file.writelines(todos)
 
-    elif 'exit' in user_input:
+    elif user_input.startswith('complete'):
+
+        try:
+
+            user_input = int(input("Enter a number of the todo , which to be marked as complete :"))
+            user_input = user_input - 1 
+
+            with open('todos.txt','r') as file :
+                todos = file.readlines()
+
+            todos.pop(user_input)
+
+            with open('todos.txt','w') as file:
+                file.writelines(todos)
+
+        except IndexError:
+            print("Enter a number less than number of total do's !")
+            continue
+
+    elif user_input.startswith('exit'):
         print("Have a Nice day ...!")
         break
 
