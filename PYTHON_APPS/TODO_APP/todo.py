@@ -3,8 +3,8 @@ def read_todos():
         todos = file.readlines()
         return todos
 
-def write_todos(todos):
-    with open('todos.txt','w') as file:
+def write_todos(filepath,todos):
+    with open(filepath,'w') as file:
         file.writelines(todos)
 
 
@@ -15,12 +15,14 @@ while True:
     if user_input.startswith('add'):
 
         todo = user_input[4:] 
-     
-        todos = read_todos()
 
-        todos.append(todo + '\n')
-
-        write_todos(todos)
+        if todo != "":
+            todos = read_todos()
+            todos.append(todo + '\n')
+            write_todos("todos.txt",todos)
+        else:
+            print("No Null entries ")
+            continue
     
     elif user_input.startswith('show'):
 
@@ -43,7 +45,7 @@ while True:
             
             todos[item_num] = updated_todo + '\n'
 
-            write_todos(todos)
+            write_todos("todos.txt",todos)
 
         except ValueError:
             print('your command is not valid ')
@@ -61,7 +63,7 @@ while True:
 
             todos.pop(user_input)
 
-            write_todos(todos)
+            write_todos("todos.txt",todos)
 
         except IndexError:
             print("Enter a number less than number of total do's !")
