@@ -48,6 +48,7 @@ while True:
             write_todos("todos.txt",todos)
 
         except ValueError:
+
             print('your command is not valid ')
             continue
 
@@ -75,11 +76,3 @@ while True:
 
     else:
         print('invalid input ...!')
-
-
-
-        
-
-
-
-     
