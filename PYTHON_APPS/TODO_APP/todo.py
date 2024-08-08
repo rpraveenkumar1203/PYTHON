@@ -1,3 +1,13 @@
+def read_todos():
+    with open('todos.txt','r') as file:
+        todos = file.readlines()
+        return todos
+
+def write_todos(todos):
+    with open('todos.txt','w') as file:
+        file.writelines(todos)
+
+
 while True:
     user_input = input("Do you need to add , show , edit , complete ,or exit the todo app : ")
     user_input = user_input.strip()
@@ -5,19 +15,16 @@ while True:
     if user_input.startswith('add'):
 
         todo = user_input[4:] 
-
-        with open('todos.txt','r') as file:
-            todos = file.readlines()
+     
+        todos = read_todos()
 
         todos.append(todo + '\n')
 
-        with open('todos.txt','w') as file:
-            file.writelines(todos)
+        write_todos(todos)
     
     elif user_input.startswith('show'):
 
-        with open('todos.txt','r') as file:
-            todos = file.readlines()
+        todos = read_todos()
         
         for index, todo in enumerate(todos):
             todos = f"{index +1}-{todo}"
@@ -32,13 +39,11 @@ while True:
 
             updated_todo = input('Enter the new todo : ')
 
-            with open('todos.txt','r') as file:
-                todos = file.readlines()
+            todos = read_todos()
             
             todos[item_num] = updated_todo + '\n'
 
-            with open('todos.txt','w') as file:
-                file.writelines(todos)
+            write_todos(todos)
 
         except ValueError:
             print('your command is not valid ')
@@ -52,13 +57,11 @@ while True:
             user_input = int(input("Enter a number of the todo , which to be marked as complete :"))
             user_input = user_input - 1 
 
-            with open('todos.txt','r') as file :
-                todos = file.readlines()
+            todos = read_todos()
 
             todos.pop(user_input)
 
-            with open('todos.txt','w') as file:
-                file.writelines(todos)
+            write_todos(todos)
 
         except IndexError:
             print("Enter a number less than number of total do's !")
