@@ -6,3 +6,20 @@ EAT
 CODE
 SLEEP
 EAT
+EAT
+bin/python3 /home/pkr/Downloads/MACHINE_LEARNING/PYTHON_APPS/TODO_APP/todo.py
+EAT
+eat
+eat
+eat
+shop
+eat
+eat
+eat
+eatingn
+eat
+eat
+
+eat
+eat
+eat
