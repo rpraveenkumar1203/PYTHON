@@ -1,4 +1,4 @@
-import functions
+import PYTHON_APPS.TODO_APP.modules.functions as functions
 
 while True:
     user_input = input("Do you need to add , show , edit , complete ,or exit the todo app : ")
@@ -9,17 +9,7 @@ while True:
         todo = user_input[4:] 
 
         old_todos = functions.read_todos("todos.txt")
-
-        # old_todo_bool = [bool(to_do == todo ) for to_do in old_todos]
-        # print(old_todo_bool)
-        # old_todo_bool = any(old_todo_bool)
-        # print(old_todo_bool)
-
-
-        # for old_todo in old_todos:
-        #     if todo == old_todo:
-        #         return
-            
+         
         
         old_todo_bool = any(todo == old_todo for old_todo in old_todos)
 
