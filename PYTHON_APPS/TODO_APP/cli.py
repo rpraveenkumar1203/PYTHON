@@ -18,6 +18,7 @@ while True:
         
         old_todo_bool = any(todo == old_todo for old_todo in old_todos)
 
+        # Need to rework on this 
         if todo != "" and old_todo_bool == False :
             todos = functions.read_todos("todos.txt")
             todos.append(todo + '\n')
