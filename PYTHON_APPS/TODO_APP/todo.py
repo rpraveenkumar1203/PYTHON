@@ -1,4 +1,9 @@
 import PYTHON_APPS.TODO_APP.modules.functions as functions
+import time 
+
+print_time = time.strftime("%H:%M:%S %Y") 
+
+print('Hi ' + print_time)
 
 while True:
     user_input = input("Do you need to add , show , edit , complete ,or exit the todo app : ")
