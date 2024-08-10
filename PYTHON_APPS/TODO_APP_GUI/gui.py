@@ -4,7 +4,6 @@ from modules import functions
 label = gui.Text("TODO")
 
 input_box = gui.InputText(tooltip="Enter your Todo",key='todo')
-
 list_box = gui.Listbox(values= functions.read_todos('todos.txt'),key='todos',enable_events=True,size=[45,10])
 
 #Buttons
@@ -40,10 +39,7 @@ while True:
             app_window['todos'].update(values=todos)
 
         case 'todos':
-
             app_window['todo'].update(value=values['todos'][0])
-
-
             
         case gui.WIN_CLOSED:
             break
