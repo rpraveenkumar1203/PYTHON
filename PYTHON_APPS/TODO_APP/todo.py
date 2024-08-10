@@ -1,4 +1,4 @@
-import PYTHON_APPS.TODO_APP.modules.functions as functions
+import modules.functions as functions
 import time 
 
 print_time = time.strftime("%H:%M:%S %Y") 
