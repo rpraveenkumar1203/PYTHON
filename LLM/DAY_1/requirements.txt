@@ -1,4 +1,0 @@
-matplotlib
-numpy
-pylzma
-ipykernel
