@@ -4,7 +4,7 @@ from modules import functions
 label = gui.Text("TODO")
 
 input_box = gui.InputText(tooltip="Enter your Todo",key='todo')
-list_box = gui.Listbox(values= functions.read_todos('todos.txt'),key='todos',enable_events=True,size=[45,10])
+list_box = gui.Listbox(values= functions.get_todos('todos.txt'),key='todos',enable_events=True,size=[45,10])
 
 #Buttons
 add_button = gui.Button("Add")
