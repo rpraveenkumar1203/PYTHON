@@ -7,7 +7,7 @@ def add_todo():
     todo_to_be_added = st.session_state['new_todo'] + '\n'
     todos.append(todo_to_be_added)
     functions.write_todos(todos)
-    del st.session_state(todo_to_be_added)
+    #del st.session_state(todo_to_be_added)
 
 st.title("My Todo for the the day ")
 st.write("In this app we can add, edit and mark as done the todo")
