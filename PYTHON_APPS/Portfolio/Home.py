@@ -14,6 +14,8 @@ with col1:
 with col2 :
     st.title("PraveenKumar Ramesh")
     st.info(descrpiton)
+    st.link_button('Github',url='https://github.com/rpraveenkumar1203')
+
 
 st.subheader('Below are the Apps developed by me from scratch')
 
