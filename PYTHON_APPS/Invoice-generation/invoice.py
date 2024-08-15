@@ -57,5 +57,3 @@ for filepath in filepaths :
     pdf.output(f"invoice_pdf/{filename}.pdf")
 
 
-
-    
