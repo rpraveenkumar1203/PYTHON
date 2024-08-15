@@ -1,15 +1,15 @@
 import streamlit as st
 import pandas as pd
 
-image = "images/rPraveenKumar.jpg"
+image = "images/PKR.png"
 descrpiton = '''🌟 Enthusiastic developer exploring Python, Golang, AI, and Machine Learning. Focused on clean, efficient code and always learning and innovating. 🚀'''
 
 st.set_page_config(layout='wide')
 
-col1, col2 = st.columns(2)
+col1, col2 = st.columns([0.25,0.75])
 
 with col1:
-    st.image(image=image,width=300)
+    st.image(image=image,width=200)
 
 with col2 :
     st.title("PraveenKumar Ramesh")
