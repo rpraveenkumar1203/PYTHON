@@ -27,7 +27,7 @@ st.subheader('Below are the Apps developed by me from scratch')
 
 col3,empty_col,col4 = st.columns([1.5,0.5,1.5])
 
-df = pd.read_csv('data.csv',sep=';')
+df = pd.read_csv('https://raw.githubusercontent.com/rpraveenkumar1203/PYTHON/main/PYTHON_APPS/Portfolio/data.csv',sep=';')
 
 with col3:
     for index, row in df[:10].iterrows():
