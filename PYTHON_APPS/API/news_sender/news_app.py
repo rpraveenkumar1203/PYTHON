@@ -16,7 +16,9 @@ request = requests.get(url)
 content = request.json()
 
 body = 'Subject : Today"s News '
+
 for article in content['articles'][:5]:
+
     length =  '='*(len(article['title']))    
 
     if article['title'] is not None:
