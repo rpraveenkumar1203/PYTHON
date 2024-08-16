@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+from PIL import Image
 
 image = "images/PKR.png"
 descrpiton = '''🌟 Enthusiastic developer exploring Python, Golang, AI, and Machine Learning. Focused on clean, efficient code and always learning and innovating. 🚀'''
@@ -9,6 +10,7 @@ st.set_page_config(layout='wide')
 col1, col2 = st.columns([0.25,0.75])
 
 with col1:
+    image = Image.open(image)
     st.image(image=image,width=200)
 
 with col2 :
