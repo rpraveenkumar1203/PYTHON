@@ -33,13 +33,13 @@ with col3:
     for index, row in df[:10].iterrows():
         st.header(row['title'])
         st.write(row['description'])
-        st.image('images/' + row['image'])
+        st.image('https://raw.githubusercontent.com/rpraveenkumar1203/PYTHON/main/PYTHON_APPS/Portfolio/images/' + row['image'])
         st.write(f"[Sourcecode]({row['url']})")
 
 with col4:
     for index, row in df[10:].iterrows():
         st.header(row['title'])
         st.write(row['description'])
-        st.image('images/' + row['image'])
+        st.image('https://raw.githubusercontent.com/rpraveenkumar1203/PYTHON/main/PYTHON_APPS/Portfolio/images/' + row['image'])
         st.write(f"[Sourcecode]({row['url']})")
 
