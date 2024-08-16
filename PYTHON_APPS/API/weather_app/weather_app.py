@@ -33,7 +33,7 @@ def weather_api_station(station):
 
 
 
-@app.route('/v1/api/year/<station>/<year>')
+@app.route('/v1/api/<station>/<year>')
 
 def weather_api_year(station,year):
     data = 'weather_data/data_small/TG_STAID' + str(station).zfill(6) + '.txt'
