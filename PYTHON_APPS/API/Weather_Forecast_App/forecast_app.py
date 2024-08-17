@@ -51,7 +51,13 @@ if place :
 
 
             if forecast_type == 'Sky':
-                images = {"Clear": "images/clear.png", "Clouds": "images/cloud.png","Rain": "images/rain.png", "Snow": "images/snow.png"}  
+
+                Clear = "https://github.com/rpraveenkumar1203/PYTHON/blob/main/PYTHON_APPS/API/Weather_Forecast_App/images/clear.png"
+                Clouds = "https://github.com/rpraveenkumar1203/PYTHON/blob/main/PYTHON_APPS/API/Weather_Forecast_App/images/cloud.png"
+                Rain = "https://github.com/rpraveenkumar1203/PYTHON/blob/main/PYTHON_APPS/API/Weather_Forecast_App/images/rain.png"
+                Snow = "https://github.com/rpraveenkumar1203/PYTHON/blob/main/PYTHON_APPS/API/Weather_Forecast_App/images/snow.png"
+
+                images = {"Clear": Clear, "Clouds": Clouds,"Rain": Rain, "Snow": Snow}  
                 weather_conditions = [sky['weather'][0]['main']for sky in temperature_data]
                 image_paths = [images[condition] for condition in weather_conditions]
                 dates = [date['dt_txt'] for date in temperature_data]
