@@ -3,7 +3,7 @@ import streamlit as st
 import weather_data as wd
 import altair as alt
 from PIL import Image
-import pandas ad pd
+import pandas as pd
 
 st.set_page_config(page_title='Weather Forecast App', layout='wide')
 st.title('Weather Forecast for the Next Days')
