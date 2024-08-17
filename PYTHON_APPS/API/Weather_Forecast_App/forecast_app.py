@@ -34,7 +34,7 @@ if place :
                 images = {
                     "Clear": "https://raw.githubusercontent.com/rpraveenkumar1203/PYTHON/main/PYTHON_APPS/API/Weather_Forecast_App/images/clear.png",
                     "Clouds": "https://raw.githubusercontent.com/rpraveenkumar1203/PYTHON/main/PYTHON_APPS/API/Weather_Forecast_App/images/cloud.png",
-                    "Rain": "https://tenor.com/view/souronesss-gif-1158491357384316217",
+                    "Rain": "https://raw.githubusercontent.com/rpraveenkumar1203/PYTHON/main/PYTHON_APPS/API/Weather_Forecast_App/images/rain.png",
                     "Snow": "https://raw.githubusercontent.com/rpraveenkumar1203/PYTHON/main/PYTHON_APPS/API/Weather_Forecast_App/images/snow.png"
                 }
 
