@@ -29,35 +29,15 @@ if place :
                 graph = px.line(x= dates ,y=temperature ,labels={"x": "Date", "y": "Temperature (C)"})
                 st.plotly_chart(graph,use_container_width=True)
 
-                # chart_data = alt.Chart(alt.pd.DataFrame({'Date': dates, 'Temperature (C)': temperature})).mark_line().encode(
-                # x='Date:T',y='Temperature (C):Q').properties(width='container',height=400)
-                # st.altair_chart(chart_data, use_container_width=True)
-
-                #df = pd.DataFrame({'Date': dates, 'Temperature (C)': temperature})
-
-                # chart_data = alt.Chart(df).mark_line().encode(
-                #     x='Date:T',
-                #     y='Temperature (C):Q'
-                # ).properties(
-                #     width='container',
-                #     height=300
-                # )
-                # st.altair_chart(chart_data, use_container_width=True)
-
-
-
-
-
-
-
             if forecast_type == 'Sky':
 
-                Clear = "https://github.com/rpraveenkumar1203/PYTHON/blob/main/PYTHON_APPS/API/Weather_Forecast_App/images/clear.png"
-                Clouds = "https://github.com/rpraveenkumar1203/PYTHON/blob/main/PYTHON_APPS/API/Weather_Forecast_App/images/cloud.png"
-                Rain = "https://github.com/rpraveenkumar1203/PYTHON/blob/main/PYTHON_APPS/API/Weather_Forecast_App/images/rain.png"
-                Snow = "https://github.com/rpraveenkumar1203/PYTHON/blob/main/PYTHON_APPS/API/Weather_Forecast_App/images/snow.png"
+                images = {
+                    "Clear": "https://raw.githubusercontent.com/rpraveenkumar1203/PYTHON/main/PYTHON_APPS/API/Weather_Forecast_App/images/clear.png",
+                    "Clouds": "https://raw.githubusercontent.com/rpraveenkumar1203/PYTHON/main/PYTHON_APPS/API/Weather_Forecast_App/images/cloud.png",
+                    "Rain": "https://raw.githubusercontent.com/rpraveenkumar1203/PYTHON/main/PYTHON_APPS/API/Weather_Forecast_App/images/rain.png",
+                    "Snow": "https://raw.githubusercontent.com/rpraveenkumar1203/PYTHON/main/PYTHON_APPS/API/Weather_Forecast_App/images/snow.png"
+                }
 
-                images = {"Clear": Clear, "Clouds": Clouds,"Rain": Rain, "Snow": Snow}  
                 weather_conditions = [sky['weather'][0]['main']for sky in temperature_data]
                 image_paths = [images[condition] for condition in weather_conditions]
                 dates = [date['dt_txt'] for date in temperature_data]
