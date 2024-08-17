@@ -1,6 +1,8 @@
 import streamlit as st
-import plotly.express as px
+#import plotly.express as px
 import weather_data as wd
+import altair as alt
+from PIL import Image
 
 st.set_page_config(page_title='Weather Forecast App', layout='wide')
 st.title('Weather Forecast for the Next Days')
@@ -24,9 +26,13 @@ if place :
                 temperature = [temperature['main']['temp'] - 273.15 for temperature  in temperature_data]
                 #print(temperature_data)
                 dates = [date['dt_txt']for date in temperature_data]
-                #print(dates)
-                graph = px.line(x= dates ,y=temperature ,labels={"x": "Date", "y": "Temperature (C)"})
-                st.plotly_chart(graph,use_container_width=True)
+                print(dates)
+                # graph = px.line(x= dates ,y=temperature ,labels={"x": "Date", "y": "Temperature (C)"})
+                # st.plotly_chart(graph,use_container_width=True)
+
+                chart_data = alt.Chart(alt.pd.DataFrame({'Date': dates, 'Temperature (C)': temperature})).mark_line().encode(
+                x='Date:T',y='Temperature (C):Q').properties(width='container',height=400)
+                st.altair_chart(chart_data, use_container_width=True)
 
             if forecast_type == 'Sky':
                 images = {"Clear": "images/clear.png", "Clouds": "images/cloud.png","Rain": "images/rain.png", "Snow": "images/snow.png"}  
@@ -34,5 +40,6 @@ if place :
                 image_paths = [images[condition] for condition in weather_conditions]
                 dates = [date['dt_txt'] for date in temperature_data]
                 st.image(image_paths, width=115,caption=dates)
+
         except KeyError:
              st.write('That place does not exist')
