@@ -1,12 +1,7 @@
 import streamlit as st
 import plotly.express as px
 import weather_data as wd
-import altair as alt
-from PIL import Image
 import pandas as pd
-
-import seaborn as sns
-import matplotlib.pyplot as plt
 
 st.set_page_config(page_title='Weather Forecast App', layout='wide')
 st.title('Weather Forecast for the Next Days')
@@ -38,7 +33,7 @@ if place :
                 # x='Date:T',y='Temperature (C):Q').properties(width='container',height=400)
                 # st.altair_chart(chart_data, use_container_width=True)
 
-                df = pd.DataFrame({'Date': dates, 'Temperature (C)': temperature})
+                #df = pd.DataFrame({'Date': dates, 'Temperature (C)': temperature})
 
                 # chart_data = alt.Chart(df).mark_line().encode(
                 #     x='Date:T',
