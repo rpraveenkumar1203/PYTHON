@@ -28,6 +28,5 @@ email_Bot
         send_email(message)
         st.session_state.user_email = ''
         st.session_state.user_message = ''
-        st.success("Message sent successfully!")
-        
+        st.success("Message sent successfully!")    
 
