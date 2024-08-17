@@ -31,9 +31,24 @@ if place :
                 # graph = px.line(x= dates ,y=temperature ,labels={"x": "Date", "y": "Temperature (C)"})
                 # st.plotly_chart(graph,use_container_width=True)
 
-                chart_data = alt.Chart(alt.pd.DataFrame({'Date': dates, 'Temperature (C)': temperature})).mark_line().encode(
-                x='Date:T',y='Temperature (C):Q').properties(width='container',height=400)
+                # chart_data = alt.Chart(alt.pd.DataFrame({'Date': dates, 'Temperature (C)': temperature})).mark_line().encode(
+                # x='Date:T',y='Temperature (C):Q').properties(width='container',height=400)
+                # st.altair_chart(chart_data, use_container_width=True)
+
+                df = pd.DataFrame({'Date': dates, 'Temperature (C)': temperature})
+
+                chart_data = alt.Chart(df).mark_line().encode(
+                    x='Date:T',
+                    y='Temperature (C):Q'
+                ).properties(
+                    width='container',
+                    height=300
+                )
+
                 st.altair_chart(chart_data, use_container_width=True)
+
+
+
 
             if forecast_type == 'Sky':
                 images = {"Clear": "images/clear.png", "Clouds": "images/cloud.png","Rain": "images/rain.png", "Snow": "images/snow.png"}  
