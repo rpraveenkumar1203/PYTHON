@@ -1,5 +1,5 @@
 import streamlit as st
-#import plotly.express as px
+import plotly.express as px
 import weather_data as wd
 import altair as alt
 from PIL import Image
@@ -31,8 +31,8 @@ if place :
                 #print(temperature_data)
                 dates = [date['dt_txt']for date in temperature_data]
                 print(dates)
-                # graph = px.line(x= dates ,y=temperature ,labels={"x": "Date", "y": "Temperature (C)"})
-                # st.plotly_chart(graph,use_container_width=True)
+                graph = px.line(x= dates ,y=temperature ,labels={"x": "Date", "y": "Temperature (C)"})
+                st.plotly_chart(graph,use_container_width=True)
 
                 # chart_data = alt.Chart(alt.pd.DataFrame({'Date': dates, 'Temperature (C)': temperature})).mark_line().encode(
                 # x='Date:T',y='Temperature (C):Q').properties(width='container',height=400)
@@ -49,14 +49,7 @@ if place :
                 # )
                 # st.altair_chart(chart_data, use_container_width=True)
 
-                plt.figure(figsize=(10, 6))
-                sns.lineplot(x='Date', y='Temperature (C)', data=df)
 
-                plt.xticks(rotation=45)  # Rotate x-axis labels if necessary
-                plt.tight_layout()  # Adjust the layout to fit labels
-
-                # Display the plot in Streamlit
-                st.pyplot(plt)
 
 
 
