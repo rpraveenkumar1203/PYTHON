@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block body %}
+  {% if protected %}
+    {% if error %}<div class="alert err">{{ error }}</div>{% endif %}
+    <form method="post" action="/admin/">
+      <label for="pwd">Enter Admin Password</label>
+      <input id="pwd" type="password" name="password" autofocus>
+      <div class="btnrow"><button>Unlock</button></div>
+    </form>
+  {% else %}
+    <table class="table">
+      <thead><tr>
+        <th>Entry ID</th><th>Name</th><th>Amount</th><th>Currency</th><th>Created</th><th>Receipt</th>
+      </tr></thead>
+      <tbody>
+        {% for r in rows %}
+          <tr>
+            <td>{{ r.EntryID }}</td>
+            <td>{{ r.Name }}</td>
+            <td>{{ r.Amount }}</td>
+            <td>{{ r.Currency }}</td>
+            <td>{{ r.CreatedAt }}</td>
+            <td>{% if r.ReceiptFilename %}<a class="link" href="/admin/receipt/{{ r.EntryID }}">PDF</a>{% else %}-{% endif %}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block body %}
+  <p><span class="badge">ID</span> {{ entry.EntryID }}</p>
+  <p><b>Name:</b> {{ entry.Name }}</p>
+  <p><b>Amount:</b> {{ entry.Amount }} {{ entry.Currency }}</p>
+  <p><b>Created:</b> {{ entry.CreatedAt }}</p>
+  <div class="btnrow">
+    <a class="link" href="/admin/receipt/{{ entry.EntryID }}">Download PDF receipt</a>
+  </div>
+{% endblock %}
